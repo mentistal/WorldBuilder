@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Worldbuilder System V1.0</title>
+<link href="css/website_style.css" rel="stylesheet" type="text/css">
+<link href="css/home_page.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="top"><div id="top_left_corner"></div><div id="system_name">Worldbuilder System V1.0</div>
+</div>
+
+<div id="website_menu">
+	<ul>
+        <li><a href="index.html">Project Home Page</a></li>
+		<li><a href="wb.html">Worldbuilder System</a></li>
+		<li><a href="twt.html">Text World Theory</a></li>
+        <li><a href="as.html">Annotation Scheme</a></li>
+        <li><a href="pub.html">Publications</a></li>
+    </ul>
+</div>
+
+<div id="home_page">
+	<div class="pub_content">
+		<h1>USER GUIDE</h1>
+		<h3>WORLDBUILDER 1.0</h3>
+		<p>Authors: Jing Wang, Zhijie Xu, Dan McIntyre, Jane Lugea, and Yufang Ho</p>
+		<p>Department of Informatics / Department of Linguistics and Modern Languages<br>University of Huddersfield, Queensgate, Huddersfield, HD1 3DH, West Yorkshire, UK</p>
+		<p>Department of Computing, Faculty of Arts, Computing, Engineering and Sciences<br>Sheffield Hallam University, sheffield, S1 1WB, South Yorkshire, UK</p>
+
+		
+		<h2>1 Introduction</h2>
+		<p>Worldbuilder is a free web‐based tool for doing Text World Theory analysis. Worldbuilder allows you to upload texts, annotate them for categories derived from Text World Theory, view descriptive statistics for your files and see visualisations of your data.<p>
+		
+		<h2>2 Accessing Worldbuilder</h2>
+		<p>Access Worldbuilder at <a href="wb.html">http://viv-research.info/TWT/system/wb.html#.</a> Worldbuilder is best viewed using Google Chrome.</P>
+		
+		<h2>3 Preparing files for upload</h2>
+		<ul>
+			<li>Files for upload should be in plain text format (.txt).</li>
+			<li>Your .txt file then needs to be annotated for part-of-speech (POS) information. The current iteration of Worldbuilder does not include a POS-tagger, so for this part of the file preparation process we recommend using Lancaster University’s CLAWS (Constituent Likelihood Automatic Word-tagging System) part-of-speech tagger for English. This can be found at: <a href="http://ucrel.lancs.ac.uk/claws/trial.html" target="_blank">http://ucrel.lancs.ac.uk/claws/trial.html.</a> Paste your text into the box on the CLAWS website, select the <b>C7</b> tagset and select <b>pseudo-XML</b> output style. Then click on <b>Tag text now</b>. Copy the tagged text and store as a plain text file (.txt). (N.B. We have not tested Worldbuilder on languages other than English though it should be possible to use an alternative POS‐tagger for non-English texts providing that the language uses a Roman alphabet).</li>
+		</ul>
+		
+		<h2>4 Uploading a file to Worldbuilder</h2>
+		<p>Click on <b>Load text file</b> on the right hand side of the screen and select your POS-tagged file. Your text should now be visible in the main window.</p>
+		
+		<h2>5 Viewing part-of-speech information</h2>
+		<p>Your text will be displayed with POS information above every word (see figure 1 for an example). (A key to the tagset is available at <a href="http://ucrel.lancs.ac.uk/claws7tags.html" target="_blank">http://ucrel.lancs.ac.uk/claws7tags.html).</a> Click on <b>Settings</b> on the right hand side of the screen and you will see a series of check boxes under the general heading <b>View PoS Marks</b>. Checking or unchecking these will either display or remove the POS tag in question. E.g. if only the <b>Noun</b> check box is ticked, only noun POS tags will be displayed. N.B. Below the <b>View PoS Marks</b> box is a <b>View Annotation Marks</b> box. Until you have added Text World Theory annotation to your text, you will not see any annotation marks other than POS tags.</p>
+		<img class='figs' src="images/fig1.PNG" alt="view pos information">
+		<figcaption class='figs'>Fig 1. Viewing POS information</figcaption>
+		
+		<h2>6 Adding Text World Theory annotation</h2>
+		<h3>6.1 Marking Discourse Worlds and Text Worlds</h3>
+			<ul>
+				<li>To begin adding Text World Theory (TWT) annotation to your text, click on <b>World Nodes</b> on the right hand side of the screen.</li>
+				<li>Your first task is to add information about the Discourse World. To do this, click on <b>Add Discourse World Node</b>. A dialogue box will appear.</li>
+				<li>Choose <b>World</b> (see figure 2). You will now have the option to choose a <b>World type</b> (see figure 2) from a drop-down menu. Choose <b>Discourse World</b>. In the comments box, add any relevant information about the discourse world (e.g. place, time, date, participants, etc.). When you are ready, click on the tick icon at the top of the dialogue box to confirm your annotation. Your discourse world will now appear under <b>Add Discourse World Node</b> on the right hand side of the screen. Click on <b>Discourse World</b> to view or edit your annotation. Click on the waste bin icon to the left if you want to delete it.
+				<img class='figs' src="images/fig2.PNG" alt="Adding World and World type information"><figcaption class='figs'>Fig 2. Adding <i>World</i> and <i>World type</i> information</figcaption>
+				</li>
+				<li>You can now start adding Text World information. First, use your mouse to highlight the text that you want to mark as constituting a Text World. The same dialogue box that appeared when you were marking the  Discourse World will appear again. Choose <b>World</b> and this time choose <b>Text World</b> from the <b>World type</b> drop-down menu. You will now see another drop-down menu which allows you to specify the <b>Text World type</b>. You can mark the Text World as being either <b>external-physical-actualized</b> or <b>internal-mental-modalized</b>. Again, the comments box is available for you to add any other notes, should you wish to. Click on the tick when you are done and your Text World will appear on the right hand side of the screen, under your Discourse World. N.B. All of the annotated ‘worlds’ will be assigned a World ID number for ease of reference and analysis. You will also see in the main window that the text you have annotated will have green or blue shading above it, depending on whether you have marked an external or internal world.</li>
+			</ul>
+		<h3>6.2 Adding information about world‐building elements</h3>
+		<p>Now that you have identified a Text World you can start adding information about worldbuilding elements. To do this, highlight whichever parts of your text you wish to annotate and the same dialogue box will appear. Choose <b>World-building Elements</b> (see figure 3).</p>
+		<img class='figs' src="images/fig3.PNG" alt="Adding world-building elements"><figcaption class='figs'>Fig 3. Adding world-building elements</figcaption>
+		<p>This now gives you three options:</p>
+		<ol>
+			<li>Click on <b>People</b> to mark a proper noun as representing either a <b>Discourse World participant</b> or a <b>Text World enactor</b>.</li>
+			<li>Click on <b>Object</b> and check the <b>Mark as a object</b> check box to add object information.</li>
+			<li>Click on <b>Location</b> and check the <b>Mark as a location</b> check box to add locational information.</li>
+			<li>Click on <b>Time</b> to add temporal information. You can then specify the type of time (clock, date, period, frequency, deictic expression) from the drop‐down menu. The second drop-down menu allows you to specify whether the time is explicit, relative or unspecified.</li>
+		</ol>
+		<p>Remember to click on the tick icon to commit your annotation.</p>
+		<h3>6.3 Adding information about function-advancing propositions</h3>
+		<p>To mark function‐advancing propositions, highlight the relevant part of the text and choose <b>Function Advancing Propositions</b> from the dialogue box (see figure 4). You can then mark the <b>Process type</b> (material/behavioural, relational/existential, verbal, mental) and the <b>Tense</b> (past, present, future) by selecting options from the two drop-down menus. Click the tick icon to commit your annotation.<p>
+		<img class='figs' src="images/fig4.PNG" alt="Adding function-advancing information"><figcaption class='figs'>Fig 4. Adding function-advancing information</figcaption>
+		<h3>6.4 Adding information about world switches</h3>
+		<p>To add world switch information, highlight the relevant part of your text and select the <b>World Switch</b> option from the dialogue box (see figure 5). Use the drop-down menu to select which number Text World you are switching from and which number Text World you are switching to (these numbers correspond to the numbered Text Worlds that appear in the list on the right hand side of your screen). Then use the check boxes to indicate whether the world switch is spatial, temporal, epistemic or attitudinal.</p>
+		<img class='figs' src="images/fig5.PNG" alt="Adding world switch information"><figcaption class='figs'>Fig 5. Adding world switch information</figcaption>
+		
+		<h2>7 Viewing Text World annotation</h2>
+		<p>Once you have annotated your text for TWT categories, you can view your annotations by clicking on the <b>Settings</b> option on the right hand side of the screen. Tick the check boxes to see your desired categories. Clicking on the <b>World Nodes</b> option displays information about all the worlds you have identified and their constituent world-building elements and functionadvancing propositions. Clicking on the <b>World Switches</b> nodes shows you all the world switches that you have marked up.</p>
+		
+		<h2>8 Viewing descriptive statistics for your file</h2>
+		<p>Once you have annotated your file for TWT categories, click on the <b>Statistics</b> tab on the left hand side of the screen to view descriptive statistics for your file. Here you can see basic statistical information about the number of words and sentences in your text, and the average sentence length. You can also view bar charts showing the number and types of text worlds and world switches in your file. Scroll down the page and you will see a bar chart detailing the number and type of function‐advancing propositions (event process types) in your file. Use the drop‐down menu to view information about event types within particular worlds.</p>
+		
+		<h2>9 Visualising your file</h2>
+		<p>Click on the <b>Visualisation</b> tab on the left hand side of the screen to see an interactive diagram of your annotated text (see figure 6). Circles represent the Discourse World and Text Worlds and arrows indicate the links between them. Click on a Text World to see associated world-building and function-advancing information (click again to hide this). Discourse World and Text Worlds can be moved by dragging with the mouse.</p>
+		<img class='figs' src="images/fig6.PNG" alt="Example"><figcaption class='figs'>Fig 6. Example visualisation</figcaption>
+		
+		<h2>10 Exporting your TWT annotated file</h2>
+		<p>To save your TWT annotated file, you need first to export it. To do this, click on the <b>Files</b> tab on the right hand side of the screen. A dialogue box will appear telling you that Worldbuilder needs to open a new window to export the file. Click <b>OK</b>. Your annotated text will now appear in a box (see figure 7). Select all the text and copy it to a text editor such as Windows Notepad. Save your file as a .xml file.</p>
+		<img class='figs' src="images/fig7.PNG" alt="Exporting your TWT annotated file"><figcaption class='figs'>Fig 7. Exporting your TWT annotated file</figcaption>
+		
+		<h2>11 Editing your TWT annotated file</h2>
+		<p>To edit your TWT annotated file, click on the <b>Files</b> tab on the right hand side of the screen and choose <b>Load Annotation File</b>. Select the .xml file you saved previously and your TWT annotated file will now appear in the main window.</p>
+				
+	</div>
+
+</div>
+
+
+</body>
+</html>

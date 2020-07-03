@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document for Worldbuilder Interface*/
+
+
+/*full screen system_menu setting*/
+#system_menu_area {
+	width: 20px;
+	height: 100%;
+	position: fixed;
+	left:160px;
+	top:40px;
+	background: #808080;
+	/*put the meun at the front (when window get too small, the list_box will cover this layer by default)*/
+	z-index:10;
+}
+#system_menu_area .system_menu{
+	display: inline-block;
+	width: 20px;
+	height: 200px;	
+	border-style: hidden;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: #999999;
+    cursor:pointer;
+}
+#system_menu_area .system_menu_choose {
+	display: inline-block;
+	width: 20px;
+	height: 200px;	
+	border-style: hidden;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: #E4E4E4;
+}
+#system_menu_area .system_menu:hover{
+	background-color: #FFBE00;
+}
+

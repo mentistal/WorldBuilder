@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document for Project Website*/
+body {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:100%;
+	height:100%;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	padding: 0px;
+    background-color: #222222;
+    user-select: none;
+   -o-user-select:none;
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+    color: white;
+    white-space: nowrap;
+}
+
+#system_name{    
+	 /*stop wrap when the window geting too small*/
+	margin: 30px;
+    text-align: center;
+}
+
+#content{
+    background-color: #777777;
+    padding: 50px;
+}
+
+h2 {
+    margin: 30px;
+    display: inline-block;
+    font-size: 60px;
+    clear:left;
+}
+
+.intro {
+    display: inline-block;
+    font-size: 30px;
+    white-space: normal;
+    width:500px;
+}
+
+textarea{
+    display: block;
+    font-size: 15px;
+    margin-left: 30px;
+}

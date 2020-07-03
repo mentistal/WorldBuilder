@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+.sentenceDiv {
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width:100%;
+	float: left;
+	display: inline-block;
+}
+
+.tw_type_1{
+    background-image: url("../icons/annotaiton_mark_physical.png");
+    background-repeat:repeat-x;
+}
+.tw_type_2{
+    background-image: url("../icons/annotaiton_mark_mental.png");
+    background-repeat:repeat-x;
+}
+
+.sentenceNum {
+    float: left;
+	width: 20px;
+    height: 100%;
+	color: #860002;
+	font-size: x-small;
+	text-align: right;
+	font-style: oblique;
+	padding-left: 0px;
+	padding-right: 5px;
+}
+
+.sentenceTXT {
+	border-left: thin solid #FF9E00;
+    display: block;
+    overflow: hidden;
+}
+
+.claws7_pos {
+	font-size: x-small;
+}
+
+.claws7_unit{
+	display: inline-block;
+	text-align: center;
+	padding-left: 3px;
+	padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+	font-size: medium;
+}
+
+.claws7_text {
+    user-select: text;
+   -o-user-select:text;
+   -moz-user-select: text;
+   -khtml-user-select: text;
+   -webkit-user-select: text;
+}
+
+.claws7_pos {
+    background-color: #EEEEEE;
+	border-bottom: thin solid #BBBBBB;
+}
+
+/*do not show punctuation*/
+.claws7_pos[punctuation=TRUE] {
+    visibility: hidden;
+}
+
+/*Colour Map for CLAWS7*/
+/*POS2 has higher priority that POS1*/
+.POS1_M {
+	background-color: #FFDFDF;
+	border-bottom: thin solid #C70000;
+}
+.POS1_N {
+	background-color: #CAE8FF;
+	border-bottom: thin solid #0394FF;
+}
+.POS1_P {
+	background-color: #F2D2FF;
+	border-bottom: thin solid #DB7DFF;
+}
+.POS1_V {
+	background-color: #CAFFD3;
+	border-bottom: thin solid #17DD00;
+}
+
+.POS2_AP {
+    background-color: #F2D2FF;
+	border-bottom: thin solid #DB7DFF;
+}
+
+/*do not show punctuation*/
+.claws7_pos[punctuation=TRUE] {
+    visibility: hidden;
+}
+
+.claws7_unit[endOfSen=TRUE] {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    /*do not allow the mark to draw because it is a really long one*/
+    border-bottom: initial;
+}
+
+.people_marked{
+    border-bottom: 2px solid #444444;
+}
+
+.object_marked{
+    border-bottom: 2px solid #444444;
+}
+
+.location_marked{
+    border-bottom: 2px solid #444444;
+}
+
+.time_marked{
+    border-bottom: 2px solid #444444;
+}
+
+.event_marked_1{
+    border-bottom: 2px solid rgb(0,255,64);
+}
+
+.event_marked_2{
+    border-bottom: 2px solid #ff99ff;
+}
+
+.event_marked_3{
+    border-bottom: 2px solid #ff9933;
+}
+
+.event_marked_4{
+    border-bottom: 2px solid rgb(0,192,255);
+}

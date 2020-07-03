@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Worldbuilder System V1.0</title>
+<link href="css/wb_interface.css" rel="stylesheet" type="text/css">
+<link href="css/wb_annotation_interface.css" rel="stylesheet" type="text/css">
+<link href="jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="css/website_style.css" rel="stylesheet" type="text/css">
+<link href="css/wb_annotation_claws7_style.css" rel="stylesheet" type="text/css">
+<link href="css/dl_component.css" rel="stylesheet" type="text/css">
+<link href="css/wb_statistics_interface.css" rel="stylesheet" type="text/css">
+<link href="css/wb_visualisation.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="top" style="z-index:10"><div id="top_left_corner"></div><div id="system_name">Worldbuilder System V1.0</div>
+</div>
+
+<div id="website_menu">
+	<ul>
+        <li><a href="index.html">Project Home Page</a></li>
+        <li><a href="twt.html">Text World Theory</a></li>
+        <li><a href="as.html">Annotation Scheme</a></li>
+        <li><a href="ug.html">User Guide</a></li>
+        <li><a href="pub.html">Publications</a></li>
+    </ul>
+</div>
+
+<div id="system_menu_area">
+	<!--This is interface for annotation-->
+    <div class="system_menu system_menu_choose" id="system_menu_annotaiton"><img src="icons/annotation.png" alt="annotation system"/></div>
+	<!--<div class="system_menu" id="system_menu_annotaiton"><a href=""><img src="icons/annotation.png" alt="annotation system"/></a></div>-->
+    <div class="system_menu" id="system_menu_statistics"><img src="icons/statistics.png" alt="visualisation system"/></div>
+    <div class="system_menu" id="system_menu_visualisation"><img src="icons/visualisation.png" alt="visualisation system"/></div>
+</div>
+
+<div id="working_interface">
+    <div class="wb_display" id="annotation_area"></div>
+    <div class="wb_display" id="statistics_area">
+        <ul id="sta_sum">
+            <li class="sta_sum_item"><span class="sta_sum_item_name">Total number of words in the text</span><span class="sta_sum_item_value" id="total_words">0</span></li>
+            <li class="sta_sum_item"><span class="sta_sum_item_name">Number of sentences in the text</span><span class="sta_sum_item_value" id="total_sentences">0</span></li>
+            <li class="sta_sum_item"><span class="sta_sum_item_name">Average sentence length</span><span class="sta_sum_item_value" id="average_sentences">0</span></li>            
+        </ul>
+        <div class="first_level_graph"><canvas id="world_type_gra" width="400" height="400"></canvas></div>
+        <div class="first_level_graph"><canvas id="world_switch_type_gra" width="400" height="400"></canvas></div>
+        <div class="first_level_graph with_option"><lable>Event Process types within...<select name="event_options">
+                <option value="1">the whole text</option>
+                <option value="2">the TW-physical</option>
+                <option value="3">the TW-mental</option>
+            </select></lable>
+            <canvas id="world_event_type_gra" width="500" height="400"></canvas>
+        </div>
+    </div>
+    <div class="wb_display" id="visualisation_area"><svg id="vis_area" width="100%" height="100%"></svg>
+    </div>
+    <div id="TWT_annotation_popup_menu_wrap">
+        <div id="dl-menu" class="dl-menuwrapper">
+        <button class="dl-trigger dl-active" style="visibility:hidden">Open Menu</button>
+        <div class="annotation_popup_menu" id="cancel_button"><a href="#" data-toggle="tooltip" title="Cancel"><img src="icons/annotation_popup_cancel.png" alt="cancel"/></a></div>
+        <div class="annotation_popup_menu" id="confirm_button"><a href="#" data-toggle="tooltip" title="Confirm"><img src="icons/annotation_popup_confirm.png" alt="confirm"/></a></div>
+        <div class="annotation_popup_menu" id="edit_button"><a href="#" data-toggle="tooltip" title="Confirm"><img src="icons/annotation_popup_confirm.png" alt="confirm"/></a></div>
+        <div class="annotation_popup_menu" id="refresh_button"><a href="#" data-toggle="tooltip" title="Refresh"><img src="icons/annotation_popup_refresh.png" alt="refresh"/></a></div>
+        <ul id="root_dl-menu" class="dl-menu dl-menuopen">
+            <li id="w_popup"><a href="#"><img src="icons/annotation_popup_world.png" alt="World"/><span class="popup_content_text">World</span></a><ul class="dl-submenu">
+                <li><a href="#"><fieldset id="w_type">
+                    <legend>World</legend>
+                    <label>World type</label>
+                    <div>
+                        <select name="w_type">
+                            <option value="0">Please Choose...</option>
+                            <option value="1">Discourse-World</option>
+                            <option value="2">Text-World</option>
+                        </select>
+                    </div>
+                    <label>Text World type</label>
+                    <div>
+                        <select name="tw_type" disabled>
+                            <option value="0">Please Choose...</option>
+                            <option value="1">external-physical-actualized</option>
+                            <option value="2">internal-mental-modalized</option>
+                        </select>
+                    </div>
+                    <p>comments</p>
+                    <div><textarea id="w_comments" name="w_comments" cols="30" rows="4" style="resize:none"></textarea></div>
+                    </fieldset></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img src="icons/annotation_popup_buildingElement.png" alt="World-Building Elements"/><span class="popup_content_text">World-Building Elements</span></a>
+                <ul class="dl-submenu">
+                    <li id="p_popup"><a href="#"><img src="icons/annotation_popup_people.png" alt="Pelole"/><span class="popup_content_text">People</span></a><ul class="dl-submenu">
+                        <li><a href="#"><fieldset>
+                            <legend>People Type</legend>
+                                <div>
+                                    <select name="p_type">
+                                        <option value="0">Please Choose...</option>
+                                        <option value="1">Discourse-World participant</option>
+                                        <option value="2">Text-World enactor</option>
+                                    </select>
+                                </div>
+                            <p>comments</p>
+                            <div><textarea id="p_comments" name="p_comments" cols="30" rows="4" style="resize:none"></textarea></div>
+                            </fieldset></a></li>                        
+                        </ul>
+                    </li>
+					<li id="o_popup"><a href="#"><img src="icons/annotation_popup_object.png" alt="Object"/><span class="popup_content_text">Object</span></a><ul class="dl-submenu">
+                        <li><a href="#"><fieldset>
+                            <legend>Object Description</legend>
+                            <div><label><input id="o_check" type="checkbox" value="o_check" />Mark as an object</label></div>
+                            <p>comments</p>
+                            <div><textarea id="o_comments" name="o_comments" cols="30" rows="4" style="resize:none"></textarea></div>
+                        </fieldset></a></li>
+                        </ul>
+                    </li>
+                    <li id="l_popup"><a href="#"><img src="icons/annotation_popup_location.png" alt="Location"/><span class="popup_content_text">Location</span></a><ul class="dl-submenu">
+                        <li><a href="#"><fieldset>
+                            <legend>Location Description</legend>
+                            <div><label><input id="l_check" type="checkbox" value="l_check" />Mark as a location</label></div>
+                            <p>comments</p>
+                            <div><textarea id="l_comments" name="l_comments" cols="30" rows="4" style="resize:none"></textarea></div>
+                        </fieldset></a></li>
+                        </ul>
+                    </li>
+                    <li id="t_popup"><a href="#"><img src="icons/annotation_popup_time.png" alt="Time"/><span class="popup_content_text">Time</span></a><ul class="dl-submenu">
+                        <li><a href="#"><fieldset>
+                            <legend>Time</legend>
+                            <label>Type</label>
+                            <div>
+                                <select name="t_type">
+                                    <option value="0">Please Choose...</option>
+                                    <option value="1">clock(hour/minute/second)</option>
+                                    <option value="2">date(year/month/day)</option>
+                                    <option value="3">period/duration</option>
+                                    <option value="4">frequency/interval</option>
+                                    <option value="5">temporal deictic expression</option>                                    
+                                </select>
+                            </div>
+                            <label>Value</label>
+                            <div>
+                                <select name="t_value">
+                                    <option value="0">Please Choose...</option>
+                                    <option value="1">explicit (standardizable)</option>
+                                    <option value="2">relative (infer to standardize)</option>
+                                    <option value="3">unspecified (non-standardizable)</option>
+                                </select>
+                            </div>
+                            <p>comments</p>
+                            <div><textarea id="t_comments" name="t_comments" cols="30" rows="4" style="resize:none"></textarea></div>
+                            </fieldset></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li id="e_popup"><a href="#"><img src="icons/annotation_popup_event.png" alt="Event"/><span class="popup_content_text">Function-Advancing Propositions</span></a><ul class="dl-submenu">
+                <li><a href="#"><fieldset>
+                    <legend>Event</legend>
+                    <label>Process type</label>
+                    <div>
+                        <select name="e_type">
+                            <option value="0">Please Choose...</option>
+                            <option value="1">material/behavioural</option>
+                            <option value="2">relational/exstential</option>
+                            <option value="3">verbal</option>
+                            <option value="4">mental</option>
+                        </select>
+                    </div>
+                    <label>Tense</label>
+                    <div>
+                        <select name="e_tense">
+                            <option value="0">Please Choose...</option>
+                            <option value="1">past</option>
+                            <option value="2">present</option>
+                            <option value="3">future</option>
+                        </select>
+                    </div>
+                    <p>comments</p>
+                    <div><textarea id="e_comments" name="e_comments" cols="30" rows="4" style="resize:none"></textarea></div>
+                    </fieldset></a></li>
+                </ul>
+            </li>
+            <li id="ws_popup"><a href="#"><img src="icons/annotation_popup_ws.png" alt="World Switch"/><span class="popup_content_text">World-Switches</span></a><ul class="dl-submenu">
+                <li><a href="#"><fieldset id="ws_type">
+                    <legend>World-Switch Type</legend>
+                    <label>From
+                        <select name="ws_from">
+                            <option value="0">...</option>
+                        </select>
+                    </label>
+                    <label>To
+                        <select name="ws_to">
+                            <option value="0">...</option>
+                        </select>
+                    </label>
+                    <div><label><input id="ws_s" type="checkbox" value="ws_s" />Spatial</label></div>
+                    <div><label><input id="ws_t" type="checkbox" value="ws_t" />Temporal</label></div>
+                    <div><label><input id="ws_e" type="checkbox" value="ws_e" />Epistemic</label></div>
+                    <div><label><input id="ws_a" type="checkbox" value="ws_a" />Attitudinal</label></div>
+                    <p>comments</p>
+                    <div><textarea id="ws_comments" name="ws_comments" cols="30" rows="4" style="resize:none"></textarea></div>
+                </fieldset></a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div id="list_box">
+        <div id="accordion">
+            <h3>Files</h3><div id="file_options">
+                <div class="file_options_class" id="load_text"><img src="icons/importTextIcon.png" alt="annotation system"/><span class="file_buttons">Load Text File</span><input type="file" id="text_files" class="upload" /><output id="list"></output></div>
+                <div class="file_options_class" id="upload_twt"><img src="icons/importXMLIcon.png" alt="annotation system"/><span class="file_buttons">Load Annotation File</span><input type="file" id="xml_files" class="upload" /></div>
+                <div class="file_options_class" id="export_twt"><img src="icons/exportXMLIcon.png" alt="annotation system"/><a href="#" style="text-decoration: none"><span class="file_buttons">Export TWT Annotation</span></a></div>
+            </div>
+            <h3>Settings</h3><div id="annotation_settings">
+                <fieldset id="pos_filter_options">
+                    <legend class="annotation_setting_legend">View PoS Mark</legend>
+                    <div><label><input id="filter_n" type="checkbox" value="noun" checked="checked">Noun</label></div>
+                    <div><label><input id="filter_v" type="checkbox" value="verb" checked="checked">Verb</label></div>
+                    <div><label><input id="filter_p" type="checkbox" value="pronoun" checked="checked">Pronoun</label></div>
+                    <div><label><input id="filter_m" type="checkbox" value="number" checked="checked">Number</label></div>
+                    <div><label><input id="filter_other" type="checkbox" value="number">Others</label></div>
+                </fieldset>
+                <fieldset id="marks_filter_options">
+                    <legend class="annotation_setting_legend">View Annotation Marks</legend>
+                    <div><label><input id="filter_world_1" type="checkbox" value="world_1" checked="checked">TW-physical</label></div>
+                    <div><label><input id="filter_world_2" type="checkbox" value="world_2" checked="checked">TW-mental</label></div>
+                    <div><label><input id="filter_people" type="checkbox" value="people" checked="checked">People</label></div>
+					<div><label><input id="filter_object" type="checkbox" value="object" checked="checked">Object</label></div>
+                    <div><label><input id="filter_locaiton" type="checkbox" value="locaiton" checked="checked">Location</label></div>
+                    <div><label><input id="filter_time" type="checkbox" value="time" checked="checked">Time</label></div>
+                    <div><label><input id="filter_event_1" type="checkbox" value="event_1" checked="checked">Material</label></div>
+                    <div><label><input id="filter_event_2" type="checkbox" value="event_2" checked="checked">Relational</label></div>
+                    <div><label><input id="filter_event_3" type="checkbox" value="event_3" checked="checked">Verbal</label></div>
+                    <div><label><input id="filter_event_4" type="checkbox" value="event_4" checked="checked">Mental</label></div>
+                </fieldset>
+            </div>
+            <h3>World Nodes</h3><div id="sorted_WN"><div id="list_add_w_button"><a href="#"><img src="icons/annotation_list_add_world.png" alt="World"/><span class="popup_content_text" style="left:0px">Add Discourse-World Node</span></a></div></div>
+            <h3>World-Switches</h3><div id="sorted_WS">
+                <div id="list_add_ws_button"><a href="#"><img src="icons/annotation_list_add_ws.png" alt="World Switch"/><span class="popup_content_text">Add World-Switch</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/wb_annotation_script.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/jquery.dlmenu.js"></script>
+<script src="js/wb_statistics_script.js"></script>
+<script src="js/Chart.bundle.js"></script>
+<script src="js/wb_visualisation_script.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/d3textwrap.js"></script>
+</body>
+</html>

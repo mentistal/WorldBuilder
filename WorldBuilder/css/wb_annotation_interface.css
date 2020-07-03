@@ -1,0 +1,217 @@
+#working_interface{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 180px;
+	top: 40px;
+	background-color: #000000;
+}
+
+#list_box {
+	position: fixed;
+	top: 40px;
+	width: 200px;
+	height: 100%;
+	background-color: #000000;
+	/*because 100% width of the working_inference will keep floating right object hidden, we use fixe position right 0% to move the list_box back*/
+	right: 0%;	
+}
+
+/*accordion style is combined with js*/
+#accordion{
+	font-size:small;
+}
+#accordion .ui-accordion-content {
+    padding: 3px;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
+
+.wb_display{
+    position: fixed;
+    top:40px;
+    left: 180px;
+    width: 100%;
+    height:100%;
+    background-color: #FFFFFF;
+    min-width: 500px;
+    min-height: 300px;
+    overflow-y:auto;
+    overflow-x: hidden; 
+}
+#annotation_area{
+    visibility: visible;
+}
+
+#statistics_area{
+    visibility: hidden;
+}
+
+#visualisation_area{
+    background-color: #FFFFFF;
+    visibility: hidden;
+}
+
+/*File buttoms are customised Input objects with hover and active CSS events*/
+.file_options_class {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+    padding:5px;
+}
+
+.file_options_class:hover {
+    background-color: #444444;
+}
+.file_options_class:active {
+    background-color: #FFBE00;
+}
+
+.file_options_class input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.file_buttons {
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+}
+
+fieldset {
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+    text-align: left;
+    margin: 3px;
+}
+
+legend {
+    background-color: #efefef;
+    border: 1px solid #dcdcdc;
+    border-radius: 20px;
+    padding: 3px;
+    text-align: center;
+    min-width: 144px;
+    color: black;
+}
+
+#list_add_w_button {
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background-color: dimgray;    
+}
+#list_add_w_button:hover {
+    background-color:darkgrey;
+}
+
+#list_add_ws_button {
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background-color: dimgray;    
+}
+#list_add_ws_button:hover {
+    background-color:darkgrey;
+}
+
+#TWT_annotation_popup_menu_wrap {
+    position:fixed;
+    visibility: hidden;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.6);
+    
+}
+textarea {
+    user-select: text;
+   -o-user-select:text;
+   -moz-user-select: text;
+   -khtml-user-select: text;
+   -webkit-user-select: text;
+}
+
+.dl-back-hidden{
+    display: none !important;
+}
+
+.annotation_popup_menu {
+    float: right;
+    width:32px;
+    height: 32px;
+    padding: 9px;
+}
+
+.popup_content_text{
+    position: relative;
+    bottom:5px;
+    left: 7px;
+}
+
+#refresh_button {
+    float: left;
+}
+
+.annotation_popup_menu:hover {
+    background-color:#ff9933;
+}
+
+#sorted_WN {
+    white-space: nowrap;
+    overflow-x: hidden !important;
+        
+}
+
+#sorted_WS {
+    white-space: nowrap;
+    overflow-x: hidden !important;        
+}
+
+.list_text {
+    position: relative;
+    bottom:5px;
+    left: 10px;
+}
+
+.list_TWT_node:hover {
+    background-color: #343434;
+}
+
+.world_node {
+    background-color: dimgrey;
+    border-radius: 12px;
+    display: inline-block;
+    width: 28px;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+}
+
+.world_node[textWorldType="1"]{
+    color: black;
+    background-color:#99ff99;
+}
+.world_node[textWorldType="2"]{
+    color: black;
+    background-color:#99ccff;
+}
+
+#unsorted_WN{
+    border-top: thin solid #ffffff;
+}
+
+.list_TWT_WS:hover {
+    background-color: #343434;
+}
+
+.WS_symbol {
+    position: relative;
+    bottom: 3px;
+}

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document for Worldbuilder Statistics Interface*/
+#statistics_area {
+    overflow-y: auto;
+}
+#sta_sum {
+    list-style: none;
+    position: relative;
+    width: 300px;
+    background-color: #eeeeee;
+    left: 47px;
+    padding-right: 38px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 44px 0px 30px 0px;
+}
+
+.sta_sum_item{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sta_sum_item_value{
+    float: right;
+}
+
+.first_level_graph{
+    margin:36px;
+    display: inline-block;
+    clear:left;
+}
+
+.with_option{
+    display: block !important;
+}

@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document for Worldbuilder Statistics Interface*/
+#visualisation_area{
+    overflow: hidden;
+}
+
+.initial_world {
+    border:3px solid #73AD21;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.i_discourse {
+    border:3px solid black;
+    background-color: white;
+}
+
+.i_physical {
+    border:3px solid #a0ffb2;
+    background-color: #a0ffb2;
+}
+
+.i_mental {
+    border:3px solid #85b4ff;
+    background-color: #85b4ff;
+}
+
+.extent_world {
+    color:#ffffff;
+    font-size:small;
+    width: 200px;
+    min-height: 200px;
+    max-height: 500px;
+    border: 3px solid;
+    top: -50px;
+    position: fixed;
+    background-color:#222222;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 3px;
+}
+
+.e_discourse {
+    border-color:black;
+}
+
+.e_physical {
+    border-color:#00e600;
+}
+
+.e_mental {
+    border-color:#85b4ff;
+}
+
+.vis_list_container{
+    padding: 3px;
+    padding-top: 13px;
+}
+
+.vis_list_item{
+    margin: 3px;
+    position: relative;
+    background-color: #555555;
+    border-radius: 5px;
+}
+
+.vis_list_item img{
+    display: block;
+    position: relative;
+    top: 6px;
+}
+
+.vis_list_item .delete {
+    display: none;
+}
+
+.vis_list_item .list_text{
+    left: 25px;
+    top: -11px;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+
+
